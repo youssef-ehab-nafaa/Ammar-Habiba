@@ -193,7 +193,7 @@ function createCelebration() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   for (let i = 0; i < 36; i += 1) {
     const petal = document.createElement('i');
-    petal.style.cssText = `position:fixed;z-index:2300;top:-20px;left:${Math.random() * 100}vw;width:8px;height:12px;border-radius:60% 0 60% 0;background:${i % 2 ? '#c6a36a' : '#e6d5bf'};animation:petalFall ${4 + Math.random() * 3}s linear ${Math.random()}s forwards;pointer-events:none`;
+    petal.style.cssText = `position:fixed;z-index:2300;top:-20px;left:${Math.random() * 100}vw;width:8px;height:12px;border-radius:60% 0 60% 0;background:${i % 2 ? '#c5a46d' : '#c98f91'};animation:petalFall ${4 + Math.random() * 3}s linear ${Math.random()}s forwards;pointer-events:none`;
     document.body.appendChild(petal);
     setTimeout(() => petal.remove(), 8500);
   }
