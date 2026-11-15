@@ -3,8 +3,8 @@
    Add a Formspree endpoint to receive and save messages directly.
    ================================================================ */
 const invitation = {
-  couple: { ar: "حبيبة وعمار", en: "Habiba & Ammar" },
-  eventType: { ar: "حفل زفاف حبيبة وعمار", en: "Habiba & Ammar’s Wedding Celebration" },
+  couple: { ar: "عمار وحبيبة", en: "Ammar & Habiba" },
+  eventType: { ar: "حفل زفاف عمار وحبيبة", en: "Ammar & Habiba’s Wedding Celebration" },
   engagementDate: "2025-10-11",
   eventDate: "2026-11-26T20:00:00+03:00",
   eventEnd: "2026-11-26T23:30:00+03:00",
@@ -31,10 +31,10 @@ const translations = {
     skip: "تخطَّ إلى المحتوى", loading: "لحظات ونحتفل معاً", gateKicker: "دعوة خاصة إليكم", gateText: "اضغطوا لفتح الدعوة ومشاركتنا فرحتنا", openInvitation: "افتح الدعوة", openMenu: "فتح القائمة", closeMenu: "إغلاق القائمة",
     mainNav: "التنقل الرئيسي", languageChoice: "اختيار اللغة", playMusic: "تشغيل الموسيقى", pauseMusic: "إيقاف الموسيقى", musicUnavailable: "تعذر تشغيل الموسيقى. يمكنكم متابعة الدعوة بدونها.",
     navHome: "الرئيسية", navEvent: "الموعد", navGallery: "الصور", navRsvp: "رسالة للعروسين",
-    heroEyebrow: "بكل الحب والسعادة", couple: "حبيبة وعمار", couplePhotoAlt: "حبيبة وعمار", heroInvite: "يتشرفان بدعوتكم لمشاركتهما فرحة زفافهما",
+    heroEyebrow: "بكل الحب والسعادة", couple: "عمار وحبيبة", couplePhotoAlt: "عمار وحبيبة", heroInvite: "يتشرفان بدعوتكم لمشاركتهما فرحة زفافهما",
     heroDate: "الخميس، 26 نوفمبر 2026", heroTime: "الساعة 8:00 مساءً", heroLocation: "قاعة مرجانه بلازا، مدينة شبين القناطر، محافظة القليوبية", heroButton: "شاركونا فرحتنا", scrollDown: "انتقل إلى المحتوى التالي",
     countdownKicker: "موعدنا يقترب", countdownTitle: "باقي على فرحتنا", days: "يوم", hours: "ساعة", minutes: "دقيقة", seconds: "ثانية",
-    countdownAccessible: "عد تنازلي إلى حفل زفاف حبيبة وعمار", countdownFinished: "اليوم يوم فرحتنا! ننتظركم للاحتفال معنا.",
+    countdownAccessible: "عد تنازلي إلى حفل زفاف عمار وحبيبة", countdownFinished: "اليوم يوم فرحتنا! ننتظركم للاحتفال معنا.",
     eventKicker: "تفاصيل الليلة", dateLabel: "التاريخ", dateValue: "الخميس، 26 نوفمبر 2026",
     timeLabel: "الوقت", timeValue: "الساعة 8:00 مساءً", venueLabel: "المكان", venueValue: "قاعة مرجانه بلازا",
     addressLabel: "العنوان", addressValue: "قاعة مرجانه بلازا - \u2066Morgana Plaza\u2069\nمدينة شبين القناطر، شبين القناطر\nمحافظة القليوبية 6337142",
@@ -47,17 +47,17 @@ const translations = {
     messagesTitle: "رسائل الضيوف", messagesEmpty: "لم تصل رسائل بعد.",
     closingKicker: "من القلب", closingTitle: "وجودكم يكمل فرحتنا", closingDate: "الخميس، 26 نوفمبر 2026، الساعة 8:00 مساءً",
     viewLocation: "عرض الموقع", confirmAttendance: "إرسال رسالة", shareInvitation: "مشاركة الدعوة", copyLink: "نسخ رابط الدعوة",
-    footerText: "صُنعت بكل الحب لفرحة حبيبة وعمار", backToTop: "العودة إلى الأعلى", copied: "تم نسخ رابط الدعوة", shareFailed: "تعذرت المشاركة؛ تم نسخ الرابط بدلاً منها",
+    footerText: "صُنعت بكل الحب لفرحة عمار وحبيبة", backToTop: "العودة إلى الأعلى", copied: "تم نسخ رابط الدعوة", shareFailed: "تعذرت المشاركة؛ تم نسخ الرابط بدلاً منها",
     calendarDownloaded: "تم تنزيل موعد المناسبة"
   },
   en: {
     skip: "Skip to content", loading: "A moment before we celebrate", gateKicker: "A special invitation for you", gateText: "Open the invitation and celebrate this beautiful moment with us", openInvitation: "Open Invitation", openMenu: "Open menu", closeMenu: "Close menu",
     mainNav: "Main navigation", languageChoice: "Choose language", playMusic: "Play music", pauseMusic: "Pause music", musicUnavailable: "The music could not be played. You can continue viewing the invitation.",
     navHome: "Home", navEvent: "Event", navGallery: "Photos", navRsvp: "Message",
-    heroEyebrow: "Together with their families", couple: "Habiba & Ammar", couplePhotoAlt: "Habiba and Ammar", heroInvite: "Joyfully invite you to celebrate their wedding",
+    heroEyebrow: "Together with their families", couple: "Ammar & Habiba", couplePhotoAlt: "Ammar and Habiba", heroInvite: "Joyfully invite you to celebrate their wedding",
     heroDate: "Thursday, 26 November 2026", heroTime: "8:00 PM", heroLocation: "Morgana Plaza, Shebin El-Qanater, Qalyubia", heroButton: "Celebrate With Us", scrollDown: "Continue to the next section",
     countdownKicker: "Our date is drawing near", countdownTitle: "Until We Celebrate", days: "Days", hours: "Hours", minutes: "Minutes", seconds: "Seconds",
-    countdownAccessible: "Countdown to Habiba and Ammar’s wedding celebration", countdownFinished: "Today is the day! We can’t wait to celebrate with you.",
+    countdownAccessible: "Countdown to Ammar and Habiba’s wedding celebration", countdownFinished: "Today is the day! We can’t wait to celebrate with you.",
     eventKicker: "Evening details", dateLabel: "Date", dateValue: "Thursday, 26 November 2026",
     timeLabel: "Time", timeValue: "8:00 PM", venueLabel: "Venue", venueValue: "Morgana Plaza",
     addressLabel: "Address", addressValue: "Morgana Plaza\nShebin El-Qanater City, Shebin El-Qanater\nQalyubia Governorate 6337142",
@@ -70,7 +70,7 @@ const translations = {
     messagesTitle: "Guest messages", messagesEmpty: "No messages yet.",
     closingKicker: "From the heart", closingTitle: "Our Celebration Would Not Be Complete Without You", closingDate: "Thursday, 26 November 2026 at 8:00 PM",
     viewLocation: "View Location", confirmAttendance: "Send a Message", shareInvitation: "Share Invitation", copyLink: "Copy Invitation Link",
-    footerText: "Made with love for Habiba and Ammar", backToTop: "Back to top", copied: "Invitation link copied", shareFailed: "Sharing was unavailable, so the link was copied instead",
+    footerText: "Made with love for Ammar and Habiba", backToTop: "Back to top", copied: "Invitation link copied", shareFailed: "Sharing was unavailable, so the link was copied instead",
     calendarDownloaded: "Calendar event downloaded"
   }
 };
@@ -103,10 +103,10 @@ function applyLanguage(language) {
   });
   $$('[data-lang]').forEach((button) => button.classList.toggle("active", button.dataset.lang === currentLanguage));
 
-  document.title = currentLanguage === "ar" ? "زفاف حبيبة وعمار | 26 نوفمبر 2026" : "Habiba & Ammar’s Wedding | 26 November 2026";
+  document.title = currentLanguage === "ar" ? "زفاف عمار وحبيبة | 26 نوفمبر 2026" : "Ammar & Habiba’s Wedding | 26 November 2026";
   const description = currentLanguage === "ar"
-    ? "يسعد حبيبة وعمار بدعوتكم لمشاركتهما فرحة زفافهما يوم الخميس 26 نوفمبر 2026 في قاعة مرجانه بلازا بمدينة شبين القناطر، محافظة القليوبية."
-    : "Habiba and Ammar invite you to celebrate their wedding on Thursday, 26 November 2026 at Morgana Plaza in Shebin El-Qanater, Qalyubia.";
+    ? "يسعد عمار وحبيبة بدعوتكم لمشاركتهما فرحة زفافهما يوم الخميس 26 نوفمبر 2026 في قاعة مرجانه بلازا بمدينة شبين القناطر، محافظة القليوبية."
+    : "Ammar and Habiba invite you to celebrate their wedding on Thursday, 26 November 2026 at Morgana Plaza in Shebin El-Qanater, Qalyubia.";
   $('meta[name="description"]').content = description;
   $('meta[property="og:title"]').content = document.title;
   $('meta[property="og:description"]').content = description;
@@ -213,11 +213,11 @@ function escapeIcs(value) {
 $('#calendarButton').addEventListener('click', () => {
   const title = invitation.eventType[currentLanguage];
   const description = currentLanguage === 'ar'
-    ? `يسعد حبيبة وعمار بدعوتكم لمشاركتهما فرحة زفافهما. ${invitation.mapsUrl}`
-    : `Habiba and Ammar invite you to celebrate their wedding. ${invitation.mapsUrl}`;
+    ? `يسعد عمار وحبيبة بدعوتكم لمشاركتهما فرحة زفافهما. ${invitation.mapsUrl}`
+    : `Ammar and Habiba invite you to celebrate their wedding. ${invitation.mapsUrl}`;
   const location = `${invitation.venue[currentLanguage]} — ${invitation.address[currentLanguage]}`;
   const ics = [
-    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Habiba and Ammar//Wedding Invitation//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Ammar and Habiba//Wedding Invitation//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
     'BEGIN:VEVENT', 'UID:habiba-ammar-wedding-20261126@invitation', `DTSTAMP:${icsDate(new Date().toISOString())}`,
     `DTSTART:${icsDate(invitation.eventDate)}`, `DTEND:${icsDate(invitation.eventEnd)}`, `SUMMARY:${escapeIcs(title)}`,
     `DESCRIPTION:${escapeIcs(description)}`, `LOCATION:${escapeIcs(location)}`, 'STATUS:CONFIRMED', 'END:VEVENT', 'END:VCALENDAR'
