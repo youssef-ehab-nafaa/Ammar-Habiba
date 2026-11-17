@@ -4,7 +4,7 @@
    ================================================================ */
 const invitation = {
   couple: { ar: "عمار وحبيبة", en: "Ammar & Habiba" },
-  eventType: { ar: "حفل زفاف عمار وحبيبة", en: "Ammar & Habiba’s Wedding Celebration" },
+  eventType: { ar: "حفل خطوبة عمار وحبيبة", en: "Ammar & Habiba’s Engagement Celebration" },
   engagementDate: "2025-10-11",
   eventDate: "2026-11-26T19:00:00+03:00",
   eventEnd: "2026-11-26T23:30:00+03:00",
@@ -16,6 +16,9 @@ const invitation = {
   },
   mapsUrl: "https://share.google/yAZd0FHOG4V9gLyc7",
   rsvpEndpoint: "https://formspree.io/f/xdaqabqg",
+  // Shared guestbook for all visitors (Google Apps Script Web App URL).
+  // See guestbook-apps-script.js for setup steps.
+  guestbookUrl: "https://script.google.com/macros/s/AKfycbwQWzgSZ8dKZXT8f6Dos5Rwslz8Md92yYe0yZoZ7NJREsFEsmD8EDGOgY7tPgxncUL8XQ/exec",
   websiteUrl: "https://youssef-ehab-nafaa.github.io/Ammar-Habiba/",
   defaultLanguage: "ar",
   musicFile: "assets/audio/our-song.mp3?v=2"
@@ -31,10 +34,10 @@ const translations = {
     skip: "تخطَّ إلى المحتوى", loading: "لحظات ونحتفل معاً", gateKicker: "دعوة خاصة إليكم", gateText: "اضغطوا لفتح الدعوة ومشاركتنا فرحتنا", openInvitation: "افتح الدعوة", openMenu: "فتح القائمة", closeMenu: "إغلاق القائمة",
     mainNav: "التنقل الرئيسي", languageChoice: "اختيار اللغة", playMusic: "تشغيل الموسيقى", pauseMusic: "إيقاف الموسيقى", musicUnavailable: "تعذر تشغيل الموسيقى. يمكنكم متابعة الدعوة بدونها.",
     navHome: "الرئيسية", navEvent: "الموعد", navGallery: "الصور", navRsvp: "رسالة للعروسين",
-    heroEyebrow: "بكل الحب والسعادة", couple: "عمار وحبيبة", couplePhotoAlt: "عمار وحبيبة", heroInvite: "يتشرفان بدعوتكم لمشاركتهما فرحة زفافهما",
+    heroEyebrow: "بكل الحب والسعادة", couple: "عمار وحبيبة", couplePhotoAlt: "عمار وحبيبة", heroInvite: "يتشرفان بدعوتكم لمشاركتهما فرحة خطوبتهما",
     heroDate: "الخميس، 26 نوفمبر 2026", heroTime: "الساعة 7:00 مساءً", heroLocation: "قاعة مرجانه بلازا، مدينة شبين القناطر، محافظة القليوبية", heroButton: "شاركونا فرحتنا", scrollDown: "انتقل إلى المحتوى التالي",
     countdownKicker: "موعدنا يقترب", countdownTitle: "باقي على فرحتنا", days: "يوم", hours: "ساعة", minutes: "دقيقة", seconds: "ثانية",
-    countdownAccessible: "عد تنازلي إلى حفل زفاف عمار وحبيبة", countdownFinished: "اليوم يوم فرحتنا! ننتظركم للاحتفال معنا.",
+    countdownAccessible: "عد تنازلي إلى حفل خطوبة عمار وحبيبة", countdownFinished: "اليوم يوم فرحتنا! ننتظركم للاحتفال معنا.",
     eventKicker: "تفاصيل الليلة", dateLabel: "التاريخ", dateValue: "الخميس، 26 نوفمبر 2026",
     timeLabel: "الوقت", timeValue: "الساعة 7:00 مساءً", venueLabel: "المكان", venueValue: "قاعة مرجانه بلازا",
     addressLabel: "العنوان", addressValue: "قاعة مرجانه بلازا - \u2066Morgana Plaza\u2069\nمدينة شبين القناطر، شبين القناطر\nمحافظة القليوبية 6337142",
@@ -42,7 +45,7 @@ const translations = {
     galleryKicker: "من أجمل اللحظات", galleryTitle: "لحظات نحتفظ بها", galleryText: "تفاصيل صغيرة تروي فرحة اليوم.",
     rsvpKicker: "كلمات من القلب", rsvpTitle: "شاركونا كلماتكم الجميلة", rsvpText: "اتركوا لنا رسالة جميلة نحتفظ بها من هذا اليوم المميز.",
     guestName: "الاسم", guestNamePlaceholder: "اكتب اسمك", guestMessage: "رسالة للعروسين", guestMessagePlaceholder: "كلماتكم تسعدنا",
-    directFormHelp: "تصل رسالتكم إلى العروسين وتظهر هنا.", sendResponse: "إرسال الرسالة",
+    directFormHelp: "رسالتكم تظهر للجميع على الدعوة فور الإرسال.", sendResponse: "إرسال الرسالة",
     nameRequired: "من فضلك اكتب اسمك.", messageRequired: "من فضلك اكتب رسالتك.", sending: "جارٍ الإرسال...", sent: "وصلت رسالتكم، شكراً من القلب!", messageSaved: "تم حفظ رسالتكم وظهرت في الدعوة.", sendFailed: "تعذر إرسال الرسالة. حاول مرة أخرى.", formNotConnected: "النموذج جاهز، ويلزم إضافة رابط الاستقبال قبل النشر.",
     messagesTitle: "رسائل الضيوف", messagesEmpty: "لم تصل رسائل بعد.",
     closingKicker: "من القلب", closingTitle: "وجودكم يكمل فرحتنا", closingDate: "الخميس، 26 نوفمبر 2026، الساعة 7:00 مساءً",
@@ -54,10 +57,10 @@ const translations = {
     skip: "Skip to content", loading: "A moment before we celebrate", gateKicker: "A special invitation for you", gateText: "Open the invitation and celebrate this beautiful moment with us", openInvitation: "Open Invitation", openMenu: "Open menu", closeMenu: "Close menu",
     mainNav: "Main navigation", languageChoice: "Choose language", playMusic: "Play music", pauseMusic: "Pause music", musicUnavailable: "The music could not be played. You can continue viewing the invitation.",
     navHome: "Home", navEvent: "Event", navGallery: "Photos", navRsvp: "Message",
-    heroEyebrow: "Together with their families", couple: "Ammar & Habiba", couplePhotoAlt: "Ammar and Habiba", heroInvite: "Joyfully invite you to celebrate their wedding",
+    heroEyebrow: "Together with their families", couple: "Ammar & Habiba", couplePhotoAlt: "Ammar and Habiba", heroInvite: "Joyfully invite you to celebrate their engagement",
     heroDate: "Thursday, 26 November 2026", heroTime: "7:00 PM", heroLocation: "Morgana Plaza, Shebin El-Qanater, Qalyubia", heroButton: "Celebrate With Us", scrollDown: "Continue to the next section",
     countdownKicker: "Our date is drawing near", countdownTitle: "Until We Celebrate", days: "Days", hours: "Hours", minutes: "Minutes", seconds: "Seconds",
-    countdownAccessible: "Countdown to Ammar and Habiba’s wedding celebration", countdownFinished: "Today is the day! We can’t wait to celebrate with you.",
+    countdownAccessible: "Countdown to Ammar and Habiba’s engagement celebration", countdownFinished: "Today is the day! We can’t wait to celebrate with you.",
     eventKicker: "Evening details", dateLabel: "Date", dateValue: "Thursday, 26 November 2026",
     timeLabel: "Time", timeValue: "7:00 PM", venueLabel: "Venue", venueValue: "Morgana Plaza",
     addressLabel: "Address", addressValue: "Morgana Plaza\nShebin El-Qanater City, Shebin El-Qanater\nQalyubia Governorate 6337142",
@@ -65,7 +68,7 @@ const translations = {
     galleryKicker: "Beautiful moments", galleryTitle: "Memories We Keep", galleryText: "Small details that carry the joy of the day.",
     rsvpKicker: "Words from the heart", rsvpTitle: "Leave Us a Beautiful Message", rsvpText: "Share a few words that we can keep as a memory of this special day.",
     guestName: "Your name", guestNamePlaceholder: "Enter your name", guestMessage: "Message for the couple", guestMessagePlaceholder: "Your words will make us smile",
-    directFormHelp: "Your message reaches the couple and appears here.", sendResponse: "Send Message",
+    directFormHelp: "Your message appears for everyone on the invitation right away.", sendResponse: "Send Message",
     nameRequired: "Please enter your name.", messageRequired: "Please write a message.", sending: "Sending...", sent: "Your message arrived—thank you from our hearts!", messageSaved: "Your message was saved and is now on the invitation.", sendFailed: "The message could not be sent. Please try again.", formNotConnected: "The form is ready; add the receiving endpoint before publishing.",
     messagesTitle: "Guest messages", messagesEmpty: "No messages yet.",
     closingKicker: "From the heart", closingTitle: "Our Celebration Would Not Be Complete Without You", closingDate: "Thursday, 26 November 2026 at 7:00 PM",
@@ -103,10 +106,10 @@ function applyLanguage(language) {
   });
   $$('[data-lang]').forEach((button) => button.classList.toggle("active", button.dataset.lang === currentLanguage));
 
-  document.title = currentLanguage === "ar" ? "زفاف عمار وحبيبة | 26 نوفمبر 2026" : "Ammar & Habiba’s Wedding | 26 November 2026";
+  document.title = currentLanguage === "ar" ? "خطوبة عمار وحبيبة | 26 نوفمبر 2026" : "Ammar & Habiba’s Engagement | 26 November 2026";
   const description = currentLanguage === "ar"
-    ? "يسعد عمار وحبيبة بدعوتكم لمشاركتهما فرحة زفافهما يوم الخميس 26 نوفمبر 2026 في قاعة مرجانه بلازا بمدينة شبين القناطر، محافظة القليوبية."
-    : "Ammar and Habiba invite you to celebrate their wedding on Thursday, 26 November 2026 at Morgana Plaza in Shebin El-Qanater, Qalyubia.";
+    ? "يسعد عمار وحبيبة بدعوتكم لمشاركتهما فرحة خطوبتهما يوم الخميس 26 نوفمبر 2026 في قاعة مرجانه بلازا بمدينة شبين القناطر، محافظة القليوبية."
+    : "Ammar and Habiba invite you to celebrate their engagement on Thursday, 26 November 2026 at Morgana Plaza in Shebin El-Qanater, Qalyubia.";
   $('meta[name="description"]').content = description;
   $('meta[property="og:title"]').content = document.title;
   $('meta[property="og:description"]').content = description;
@@ -213,18 +216,18 @@ function escapeIcs(value) {
 $('#calendarButton').addEventListener('click', () => {
   const title = invitation.eventType[currentLanguage];
   const description = currentLanguage === 'ar'
-    ? `يسعد عمار وحبيبة بدعوتكم لمشاركتهما فرحة زفافهما. ${invitation.mapsUrl}`
-    : `Ammar and Habiba invite you to celebrate their wedding. ${invitation.mapsUrl}`;
+    ? `يسعد عمار وحبيبة بدعوتكم لمشاركتهما فرحة خطوبتهما. ${invitation.mapsUrl}`
+    : `Ammar and Habiba invite you to celebrate their engagement. ${invitation.mapsUrl}`;
   const location = `${invitation.venue[currentLanguage]} — ${invitation.address[currentLanguage]}`;
   const ics = [
-    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Ammar and Habiba//Wedding Invitation//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Ammar and Habiba//Engagement Invitation//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
     'BEGIN:VEVENT', 'UID:habiba-ammar-wedding-20261126@invitation', `DTSTAMP:${icsDate(new Date().toISOString())}`,
     `DTSTART:${icsDate(invitation.eventDate)}`, `DTEND:${icsDate(invitation.eventEnd)}`, `SUMMARY:${escapeIcs(title)}`,
     `DESCRIPTION:${escapeIcs(description)}`, `LOCATION:${escapeIcs(location)}`, 'STATUS:CONFIRMED', 'END:VEVENT', 'END:VCALENDAR'
   ].join('\r\n');
   const url = URL.createObjectURL(new Blob([ics], { type: 'text/calendar;charset=utf-8' }));
   const link = document.createElement('a');
-  link.href = url; link.download = 'habiba-ammar-wedding.ics'; link.click();
+  link.href = url; link.download = 'ammar-habiba-engagement.ics'; link.click();
   URL.revokeObjectURL(url);
   showToast(t('calendarDownloaded'));
 });
@@ -238,26 +241,56 @@ function readLocalMessages() {
     return [];
   }
 }
+function writeLocalMessages(items) {
+  localStorage.setItem(GUEST_MESSAGE_KEY, JSON.stringify(items));
+}
 function messageKey(item) {
   return `${item.createdAt}|${item.name}|${item.message}`;
 }
-async function loadSharedMessages() {
-  try {
-    const response = await fetch("messages.json", { cache: "no-store" });
-    if (!response.ok) return [];
-    const data = await response.json();
-    return Array.isArray(data) ? data : [];
-  } catch {
-    return [];
+function normalizeMessages(data) {
+  if (Array.isArray(data)) return data;
+  if (data && typeof data === "object") {
+    return Object.values(data).filter((item) => item && typeof item === "object");
   }
+  return [];
 }
-function mergeMessages(shared, local) {
+function mergeMessages(...lists) {
   const map = new Map();
-  [...shared, ...local].forEach((item) => {
+  lists.flat().forEach((item) => {
     if (!item || !String(item.name || "").trim() || !String(item.message || "").trim()) return;
-    map.set(messageKey(item), item);
+    map.set(messageKey(item), {
+      name: String(item.name).trim().slice(0, 80),
+      message: String(item.message).trim().slice(0, 500),
+      createdAt: item.createdAt || new Date().toISOString()
+    });
   });
   return [...map.values()].sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)));
+}
+async function loadSharedMessages() {
+  const sources = [];
+  if (invitation.guestbookUrl) {
+    try {
+      const response = await fetch(`${invitation.guestbookUrl}${invitation.guestbookUrl.includes("?") ? "&" : "?"}t=${Date.now()}`, {
+        cache: "no-store"
+      });
+      if (response.ok) sources.push(normalizeMessages(await response.json()));
+    } catch {
+      /* guestbook unavailable */
+    }
+  }
+  try {
+    const response = await fetch(`messages.json?t=${Date.now()}`, { cache: "no-store" });
+    if (response.ok) sources.push(normalizeMessages(await response.json()));
+  } catch {
+    /* optional local file */
+  }
+  try {
+    const response = await fetch("api/messages", { cache: "no-store" });
+    if (response.ok) sources.push(normalizeMessages(await response.json()));
+  } catch {
+    /* local server only */
+  }
+  return mergeMessages(...sources);
 }
 function renderGuestMessages(items) {
   const list = $("#guestMessages");
@@ -277,28 +310,50 @@ function renderGuestMessages(items) {
   });
 }
 async function refreshGuestMessages() {
-  renderGuestMessages(mergeMessages(await loadSharedMessages(), readLocalMessages()));
+  const items = mergeMessages(await loadSharedMessages(), readLocalMessages());
+  writeLocalMessages(items);
+  renderGuestMessages(items);
 }
 async function saveGuestMessage(entry) {
-  const local = readLocalMessages();
-  local.push(entry);
-  localStorage.setItem(GUEST_MESSAGE_KEY, JSON.stringify(local));
+  writeLocalMessages(mergeMessages(readLocalMessages(), [entry]));
+  renderGuestMessages(mergeMessages(readLocalMessages()));
+
+  let sharedOk = false;
+  if (invitation.guestbookUrl) {
+    try {
+      // text/plain avoids a CORS preflight with Google Apps Script web apps
+      const response = await fetch(invitation.guestbookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(entry)
+      });
+      sharedOk = response.ok;
+    } catch {
+      sharedOk = false;
+    }
+  }
+
   try {
     const response = await fetch("api/messages", {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify(entry)
     });
-    if (!response.ok) return false;
-    const saved = await response.json();
-    if (Array.isArray(saved)) {
-      localStorage.setItem(GUEST_MESSAGE_KEY, JSON.stringify(saved));
-      renderGuestMessages([...saved].sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt))));
+    if (response.ok) {
+      const saved = await response.json();
+      if (Array.isArray(saved)) {
+        writeLocalMessages(saved);
+        renderGuestMessages(mergeMessages(saved));
+        return true;
+      }
+      sharedOk = true;
     }
-    return true;
   } catch {
-    return false;
+    /* local server only */
   }
+
+  await refreshGuestMessages();
+  return sharedOk;
 }
 
 const form = $('#rsvpForm');
@@ -320,11 +375,10 @@ form.addEventListener('submit', async (event) => {
   const entry = { name, message, createdAt: new Date().toISOString() };
 
   try {
-    const savedToFile = await saveGuestMessage(entry);
-    if (!savedToFile) await refreshGuestMessages();
+    const savedShared = await saveGuestMessage(entry);
     form.reset();
 
-    let delivered = false;
+    let delivered = savedShared;
     if (invitation.rsvpEndpoint) {
       const formData = new FormData();
       formData.append('name', name);
@@ -337,12 +391,12 @@ form.addEventListener('submit', async (event) => {
           body: formData,
           headers: { Accept: 'application/json' }
         });
-        delivered = response.ok;
+        delivered = delivered || response.ok;
       } catch {
-        delivered = false;
+        /* Formspree optional */
       }
     }
-    showToast(delivered ? t('sent') : t('messageSaved'));
+    showToast(delivered || invitation.guestbookUrl ? t('sent') : t('messageSaved'));
   } catch {
     showToast(t('sendFailed'));
   } finally {
@@ -351,6 +405,7 @@ form.addEventListener('submit', async (event) => {
   }
 });
 refreshGuestMessages();
+window.setInterval(refreshGuestMessages, 30000);
 
 const toast = $('#toast');
 let toastTimer;
@@ -379,7 +434,7 @@ $('#copyButton').addEventListener('click', () => copyInvitationUrl());
 $('#shareButton').addEventListener('click', async () => {
   const url = invitationUrl();
   if (!url) { copyInvitationUrl(); return; }
-  const data = { title: invitation.eventType[currentLanguage], text: currentLanguage === 'ar' ? 'شاركونا فرحة زفافنا' : 'Celebrate our wedding with us', url };
+  const data = { title: invitation.eventType[currentLanguage], text: currentLanguage === 'ar' ? 'شاركونا فرحة خطوبتنا' : 'Celebrate our engagement with us', url };
   if (navigator.share) {
     try { await navigator.share(data); } catch (error) { if (error.name !== 'AbortError') await copyInvitationUrl(t('shareFailed')); }
   } else await copyInvitationUrl();

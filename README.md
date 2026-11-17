@@ -1,6 +1,6 @@
-﻿# Ammar & Habiba Wedding Invitation
+﻿# Ammar & Habiba Engagement Invitation
 
-A bilingual Arabic and English wedding invitation. The page itself is the source of the wedding details:
+A bilingual Arabic and English engagement invitation. The page itself is the source of the engagement details:
 
 - Couple: عمار وحبيبة / Ammar & Habiba
 - Date and time: Thursday, 26 November 2026, 7:00 PM–11:30 PM, Africa/Cairo
@@ -13,17 +13,20 @@ The site is plain HTML, CSS, and JavaScript. It does not need Node.js or a build
 
 ## Guest messages
 
-The form posts to the existing Formspree endpoint in `script.js`:
+GitHub Pages is static, so shared congratulation messages use a free Google Apps Script web app as the guestbook API.
+
+1. Open [script.google.com](https://script.google.com) → New project.
+2. Paste `guestbook-apps-script.js`, then Save.
+3. Deploy → New deployment → Web app → Execute as **Me** → Who has access **Anyone**.
+4. Copy the Web App URL into `script.js`:
 
 ```js
-rsvpEndpoint: "https://formspree.io/f/xdaqabqg"
+guestbookUrl: "https://script.google.com/macros/s/XXXX/exec"
 ```
 
-That endpoint is a public form address, not a private API key. Formspree stores the submissions in the connected Formspree account.
+After that, every visitor sees every message. Formspree (`rsvpEndpoint`) still emails the couple when someone submits.
 
-GitHub Pages cannot write new entries into `messages.json`. The public page can only read that file. A message typed on the published site is delivered through Formspree, and a copy is kept in that visitor’s browser so they can still see their own note.
-
-`server.py` is only for local preview. It serves the site on `http://127.0.0.1:8777` and appends guest messages to `messages.json`. Do not describe the published site as saving messages into that file.
+`server.py` is only for local preview on `http://127.0.0.1:8777` and can append to `messages.json` locally.
 
 ## Preview locally
 
