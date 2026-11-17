@@ -3,7 +3,7 @@
 A bilingual Arabic and English wedding invitation. The page itself is the source of the wedding details:
 
 - Couple: عمار وحبيبة / Ammar & Habiba
-- Date and time: Thursday, 26 November 2026, 8:00 PM–11:30 PM, Africa/Cairo
+- Date and time: Thursday, 26 November 2026, 7:00 PM–11:30 PM, Africa/Cairo
 - Venue: قاعة مرجانه بلازا / Morgana Plaza, Shebin El-Qanater, Qalyubia
 - Map: https://share.google/yAZd0FHOG4V9gLyc7
 
