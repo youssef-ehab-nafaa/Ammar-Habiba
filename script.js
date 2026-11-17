@@ -18,7 +18,7 @@ const invitation = {
   rsvpEndpoint: "https://formspree.io/f/xdaqabqg",
   websiteUrl: "https://youssef-ehab-nafaa.github.io/Ammar-Habiba/",
   defaultLanguage: "ar",
-  musicFile: "assets/audio/our-song.mp3"
+  musicFile: "assets/audio/our-song.mp3?v=2"
 };
 
 const favicon = document.querySelector('link[rel="icon"]');

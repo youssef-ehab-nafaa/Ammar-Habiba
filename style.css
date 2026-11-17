@@ -76,12 +76,12 @@ body.gate-locked { overflow: hidden; }
   position: fixed; inset: 0; z-index: 2450; isolation: isolate;
   display: grid; place-items: center; padding: 28px;
   color: var(--white); text-align: center;
-  background: #100f0d url("assets/images/hero.jpg?v=5") center center / contain no-repeat;
+  background: #100f0d url("assets/images/gate.jpg?v=1") center center / contain no-repeat;
   transition: opacity .7s ease, visibility .7s ease;
 }
 .invitation-gate[hidden] { display: none; }
 .invitation-gate.opening { opacity: 0; visibility: hidden; pointer-events: none; }
-.gate-overlay { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(16,15,13,.35), rgba(16,15,13,.18) 45%, rgba(16,15,13,.55)); }
+.gate-overlay { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(16,15,13,.28), rgba(16,15,13,.12) 45%, rgba(16,15,13,.48)); }
 .gate-frame { position: absolute; inset: 22px; border: 1px solid rgba(232,212,172,.45); pointer-events: none; }
 .gate-frame::before { content: ""; position: absolute; inset: 7px; border: 1px solid rgba(255,255,255,.12); }
 .gate-content { width: min(620px, 100%); }
@@ -394,7 +394,7 @@ footer p { margin: 7px 0; font-size: .72rem; }
 .theme-black-gold .invitation-gate,
 .theme-black-gold .hero,
 .theme-black-gold .closing-section { background-color: #100f0d; }
-.theme-black-gold .gate-overlay { background: linear-gradient(180deg, rgba(0,0,0,.32), rgba(0,0,0,.14) 42%, rgba(0,0,0,.5)); }
+.theme-black-gold .gate-overlay { background: linear-gradient(180deg, rgba(0,0,0,.28), rgba(0,0,0,.1) 42%, rgba(0,0,0,.45)); }
 .theme-black-gold .hero-overlay { background: linear-gradient(180deg, rgba(0,0,0,.32), rgba(0,0,0,.14) 48%, rgba(0,0,0,.5)); }
 .theme-black-gold .closing-overlay { background: rgba(0,0,0,.52); }
 .theme-black-gold .gallery-section { background: linear-gradient(180deg, #171614, #1b1916); }
