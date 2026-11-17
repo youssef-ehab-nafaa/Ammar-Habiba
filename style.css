@@ -268,11 +268,11 @@ html[lang="ar"] .event-heading { font-size: clamp(2.4rem, 5.5vw, 4.3rem); }
 .gallery-intro { max-width: 520px; margin: -6px auto 34px; color: var(--ink); opacity: .78; font-size: .95rem; }
 .gallery-grid {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  grid-template-rows: 260px 220px;
+  grid-template-columns: 1fr 1fr;
   gap: 14px;
   max-width: 900px;
   margin: 0 auto;
+  align-items: start;
 }
 .gallery-item {
   margin: 0;
@@ -283,16 +283,17 @@ html[lang="ar"] .event-heading { font-size: clamp(2.4rem, 5.5vw, 4.3rem); }
   background: #1a1713;
 }
 .gallery-item.tall { grid-row: 1 / span 2; }
-.gallery-item.wide { grid-column: 2; }
+.gallery-item.wide { grid-column: 1 / -1; }
 .gallery-item img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 20%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center center;
   background: #1a1713;
   transition: transform .7s ease;
 }
-.gallery-item:hover img { transform: scale(1.06); }
+.gallery-item:hover img { transform: scale(1.02); }
 
 .rsvp-section { background: radial-gradient(circle at 80% 20%, rgba(197,164,109,.17), transparent 35%), var(--cream); }
 .rsvp-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(45px, 8vw, 100px); align-items: center; }
@@ -356,9 +357,9 @@ footer p { margin: 7px 0; font-size: .72rem; }
   .rsvp-layout { grid-template-columns: 1fr; }
   .details-grid { grid-template-columns: 1fr 1fr; }
   .detail-card.address-card { grid-column: 1 / -1; }
-  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 200px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
   .gallery-item.tall { grid-row: 1 / span 2; }
-  .gallery-item.wide { grid-column: 2; }
+  .gallery-item.wide { grid-column: 1 / -1; }
 }
 
 @media (max-width: 620px) {
@@ -375,7 +376,7 @@ footer p { margin: 7px 0; font-size: .72rem; }
   .count-card { padding: 19px 10px; }
   .details-grid { grid-template-columns: 1fr; }
   .detail-card.address-card { grid-column: auto; }
-  .gallery-grid { grid-template-columns: 1fr; grid-template-rows: repeat(3, 240px); }
+  .gallery-grid { grid-template-columns: 1fr; }
   .gallery-item.tall,
   .gallery-item.wide { grid-column: auto; grid-row: auto; }
   .closing-section { min-height: 530px; }
